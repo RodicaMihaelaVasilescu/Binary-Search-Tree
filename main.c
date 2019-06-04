@@ -34,19 +34,7 @@ int main()
         if( search(x,root)!= -1)
             delete( x, root);
     }
-/*
-    struct nod *new_nod;
 
-    new_nod = insert ( 4, root );
-    printf( "\n%d " , new_nod -> info);
-
-    new_nod = insert ( 2, root );
-    printf( "\n%d " , new_nod -> info);
-
-    new_nod = insert ( 5, root );
-    printf( "\n%d " , new_nod -> info);
-
-*/
     ///Inserting the nodes 15 11 16 1 0 5 3 50 37 60 25 into the tree
     printf( "\nInserting the nodes 15 11 16 1 0 5 3 50 37 60 25 into the tree ");
     insert ( 15, &root);
