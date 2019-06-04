@@ -4,26 +4,6 @@
 /// Created by Vasilescu Rodica - Mihaela
 /// Binary Search Trees
 #include "binary_search_tree.h"
-/*
-struct nod * insert( int new_value, struct nod *root){
-
-    if( root == NULL){
-        root = (struct nod *) malloc( sizeof ( struct nod));
-        root -> info = new_value;
-        root -> right = NULL;
-        root -> left = NULL;
-        return root;
-    }
-    else{
-        if( new_value < root -> info)
-           root -> left = insert ( new_value, root -> left);
-        else
-           root -> right = insert ( new_value, root -> right);
-        return root;
-    }
-
-}
-*/
 
 void insert( int new_value, struct nod **root) {
     ///\fn void insert( int new_value, struct nod **root)
@@ -33,12 +13,10 @@ void insert( int new_value, struct nod **root) {
     ///
     ///If the Binary Search Tree is empty, the first value will be the root
     if( *root == NULL){
-
         *root = (struct nod *) malloc( sizeof ( struct nod));
         (*root) -> info = new_value;
         (*root) -> right = NULL;
         (*root) -> left = NULL;
-
     }
     ///else
     else
@@ -51,7 +29,6 @@ void insert( int new_value, struct nod **root) {
            insert ( new_value, &((*root) -> right));
     }
 }
-
 
 int search ( int value, struct nod *root ){
     ///\fn int search ( int value, struct nod *root )
@@ -76,7 +53,6 @@ int search ( int value, struct nod *root ){
         ///then the key we are searching for does not exist in the tree.
         else return -1;
 }
-
 
 void delete(int del , struct nod *root){
     ///\fn void delete(int del , struct nod *root)
@@ -134,7 +110,6 @@ void delete(int del , struct nod *root){
     ///Instead, choose its in-order successor node as replacement: node Temp.
     ///\param temp The node with the most appropriate value to the value of the node we are going to delete
      else{
-
             temp = current -> right;
             while( temp -> left != NULL){
                 temp = temp -> left;
@@ -143,10 +118,7 @@ void delete(int del , struct nod *root){
             delete(aux, root);
             current -> info = aux;
         }
-
 }
-
-
 
 void preorder (struct nod *root){
     ///\fn void preorder (struct nod *root)
@@ -163,7 +135,6 @@ void preorder (struct nod *root){
                 preorder ( root -> right );/// by recursively calling the preorder function.
     }
 }
-
 
 void inorder (struct nod *root){
     ///\fn void inorder (struct nod *root)
@@ -182,7 +153,6 @@ void inorder (struct nod *root){
     }
 }
 
-
 void postorder (struct nod *root){
     ///\fn void postorder (struct nod *root)
     ///\brief Postorder Traversal - Algorithm:
@@ -200,6 +170,3 @@ void postorder (struct nod *root){
 
     }
 }
-
-
-
